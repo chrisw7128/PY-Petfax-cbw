@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>This is the new facts page.</h1>
+    <h1>Submit a Pet Fact</h1>
+    <form action="/submit_fact" method="post">
+        <label for="submitter">Submitter's Name:</label>
+        <input type="text" id="submitter" name="submitter" required>
+        <br>
+        <label for="fact">Pet Fact:</label>
+        <textarea id="fact" name="fact" rows="1" cols="25" required></textarea>
+        <br>
+        <button type="submit">Submit Fact</button>
+    </form>
+    <a href="{{ url_for('facts.index') }}">Go back to Facts Page</a>
+</body>
+</html>
